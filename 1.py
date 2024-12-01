@@ -13,12 +13,15 @@ switchArray = True
 firstCollumn = []
 secondCollumn = []
 for x in desired_array:
-    if switchArray == True:
+    if switchArray:
         firstCollumn.append(x)
         switchArray = False
     else:
         secondCollumn.append(x)
         switchArray = True
+
+firstCollumn.sort()
+secondCollumn.sort()
 
 allDifs = []
 myIndex = 0        
@@ -29,6 +32,6 @@ for x in firstCollumn:
 
 totalDif = 0
 for x in allDifs:
-    totalDif = totalDif + x
+    totalDif = totalDif + abs(x)
     
 print(totalDif)
